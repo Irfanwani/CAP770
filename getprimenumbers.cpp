@@ -11,7 +11,7 @@ int main() {
         if(arr[i] == 1) {
             arr[i] = 0;
         }
-        if(arr[i]*arr[i] > 0) break;
+        if(arr[i]*arr[i] > 20) break;
         else {
             for(int j = i+1; j <= 20; j++) {
                 if(arr[j] % arr[i] == 0) arr[j] = 0;
