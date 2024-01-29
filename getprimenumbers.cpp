@@ -10,7 +10,9 @@ int main() {
     for(int i = 0; i < 20; i++) {
         if(arr[i] == 1) {
             arr[i] = 0;
-        }else {
+        }
+        if(arr[i]*arr[i] > 0) break;
+        else {
             for(int j = i+1; j <= 20; j++) {
                 if(arr[j] % arr[i] == 0) arr[j] = 0;
             }
