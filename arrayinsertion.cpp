@@ -6,7 +6,6 @@ int main() {
     do {
     cout << "Enter the number of elements: " << endl;
     cin >> size;
-
     }while(size <= 0 || size >= 100);
 
     int x = 0;
