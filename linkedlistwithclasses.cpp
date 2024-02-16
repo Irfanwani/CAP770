@@ -25,6 +25,16 @@ class LinkedList {
         free(head);
     }
 
+    // get length of the list
+    int length() {
+        int i = 0;
+        Node* current = head;
+        while(current) {
+            i++;
+            current = current->next;
+        }
+        return i;
+    }
     // add item at end
     void append(int data) {
         Node* newNode = new Node(data);
@@ -114,5 +124,6 @@ int main() {
     linkedlist.remove(0);
     linkedlist.remove(4);
     linkedlist.display();
+    cout << linkedlist.length();
     return 0;
 }
