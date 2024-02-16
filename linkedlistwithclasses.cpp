@@ -8,6 +8,9 @@ class Node {
     Node(int data) {
         this->data = data;
     }
+    ~Node() {
+        free(next);
+    }
 };
 
 class LinkedList {
@@ -16,6 +19,10 @@ class LinkedList {
     public:
     LinkedList() {
         head = nullptr;
+    }
+
+    ~LinkedList() {
+        free(head);
     }
 
     // add item at end
