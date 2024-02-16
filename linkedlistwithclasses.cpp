@@ -17,6 +17,8 @@ class LinkedList {
     LinkedList() {
         head = nullptr;
     }
+
+    // add item at end
     void append(int data) {
         Node* newNode = new Node(data);
         if(head == nullptr) {
@@ -32,6 +34,7 @@ class LinkedList {
         current->next = newNode;
     };
 
+    // insert item at any position
     void insert(int data, int index) {
         Node* newNode = new Node(data);
 
@@ -57,9 +60,10 @@ class LinkedList {
 
     };
 
+    // to display the data of the linked list
     void display() {
         Node* current = head;
-        while(current != nullptr) {
+        while(current) {
             cout << current->data << " -> ";
             current = current->next;
         }
@@ -67,7 +71,24 @@ class LinkedList {
         cout << "NULL" << endl;
     };
 
-    void remove() {};
+    // to remove any item from the linked list
+    void remove(int index) {
+        Node* current = head;
+        if(index == 0) {
+            head = current->next;
+            return;
+        }
+
+        int i = 0;
+        while(current) {
+            if(i == index - 1) {
+                current->next = current->next->next;
+                return;
+            }
+            current = current->next;
+            i++;
+        }
+    };
 };
 
 int main() {
@@ -83,6 +104,8 @@ int main() {
     }
     linkedlist.insert(300, 0);
     linkedlist.insert(3400, 3);
+    linkedlist.remove(0);
+    linkedlist.remove(4);
     linkedlist.display();
     return 0;
 }
