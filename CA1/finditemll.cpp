@@ -9,6 +9,7 @@ class StudentNode {
     StudentNode* next;
 
     StudentNode(string name, int rollno, float percentage): name(name), rollno(rollno), percentage(percentage) {};
+    
     ~StudentNode() {
         free(next);
     }
