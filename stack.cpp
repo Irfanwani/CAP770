@@ -36,7 +36,7 @@ void display(int arr[], int len) {
 
 
 int main() {
-    int n = -1, num, len = 0;
+    int n, num, len = 0;
     int arr[10];
 
     do {
