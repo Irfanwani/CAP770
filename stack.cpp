@@ -40,7 +40,7 @@ int main() {
     int arr[10];
 
     do {
-        cout << "Enter a choice (1 -> Push 2-> Pop 3-> exit and display):" << endl;
+        cout << "Enter a choice [1) Push 2) Pop 3) exit and display]:" << endl;
         cin >> n;
         if(n < 1 || n > 3 ) {
             cout << "Please enter a valid input" << endl;
