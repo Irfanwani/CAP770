@@ -22,12 +22,14 @@ class Queue {
         cout << "Enter the number to be inserted: ";
         int x;
         cin >> x;
-        if(r == SIZE) {
+        if(f == -1) {
+            f = 0;
+            r = 0;
+        }
+        else if(r == SIZE - 1) {
             r = 0;
         }else r++;
         arr[r] = x;
-        cout << "Value of R: " << r << endl;
-        if(f == -1) f = 0;
     };
 
     void dequeue() {
@@ -38,25 +40,30 @@ class Queue {
             return;
         }
 
-        if(f >= SIZE) f = 0;
+        if(f == SIZE - 1) f = 0;
         else f++;
     };
 
     void display() {
-        if(f == -1 && r == -1) {
+        if (f == -1) {
             cout << "Empty Queue" << endl;
             return;
         }
-        cout << "Elements of the Queue are: \n";
-        for(int i = f; i < SIZE;i++) {
-            cout << arr[i] << endl;
-        }
-        if(r < f) {
-            for(int i = r; i < f; i++) {
+
+        cout << "Elements of the Queue are: " << endl;
+        if (r < f) {
+            for (int i = 0; i <= r; i++) {
+                cout << arr[i] << endl;
+            }
+            for (int i = f; i < SIZE; i++) {
+                cout << arr[i] << endl;
+            }
+        } else {
+            for (int i = f; i <= r; i++) {
                 cout << arr[i] << endl;
             }
         }
-    };
+    }
 };
 
 int main() {
